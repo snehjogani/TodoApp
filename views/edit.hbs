@@ -1,0 +1,44 @@
+<h2>Edit todo</h2>
+<form action="/" method="post">
+  <input type="hidden" name="id" value="{{todo._id}}" />
+  <table>
+    <tr>
+      <td><label>Modify task: &nbsp;&nbsp;&nbsp;</label></td>
+      <td><input type="text" name="name" value="{{todo.name}}" /></td>
+    </tr>
+    <tr>
+      <td><label>Description: &nbsp;&nbsp;&nbsp;</label></td>
+      <td><input type="text" name="desc" value="{{todo.desc}}" /></td>
+    </tr>
+    <tr>
+      <td><label>Status: &nbsp;</label></td>
+      <td>
+        {{#statusCompleted todo.status}}
+          <select name="status">
+              <option value="pending">Pending</option>
+              <option value="ongoing">Ongoing</option>
+              <option value="completed" selected>Completed</option>
+          </select> 
+        {{else}}
+          {{#statusOngoing todo.status}}
+            <select name="status">
+              <option value="pending">Pending</option>
+              <option value="ongoing" selected>Ongoing</option>
+              <option value="completed">Completed</option>
+            </select> 
+          {{else}}
+            <select name="status">
+                <option value="pending" selected>Pending</option>
+                <option value="ongoing">Ongoing</option>
+                <option value="completed">Completed</option>
+            </select> 
+          {{/statusOngoing}}
+        {{/statusCompleted}}
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><br><input type="submit" value="Save Todo" /></td>
+    </tr>
+  </table>
+</form>

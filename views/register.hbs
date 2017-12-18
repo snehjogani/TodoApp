@@ -1,0 +1,34 @@
+<h3>Register</h3>
+{{#if errors}}
+  {{#each errors}}
+    {{msg}}
+  {{/each}}
+{{/if}}
+<form method="post" action="/register">
+  <table>
+    <tr>
+      <td><label>Name: </label></td>
+      <td><input type="text" placeholder="Name" name="name"></td>
+    </tr>
+    <tr>
+      <td><label>Username: </label></td>
+      <td><input type="text" placeholder="Username" name="username"></td>
+    </tr>
+    <tr>
+      <td><label>Email: </label></td>
+      <td><input type="text" placeholder="Email" name="email"></td>
+    </tr>
+    <tr>
+      <td><label>Password: </label></td>
+      <td><input type="password" placeholder="Password" name="password"></td>
+    </tr>
+    <tr>
+      <td><label>Confirm Password: &nbsp;&nbsp;</label></td>
+      <td><input type="password" placeholder="Password" name="password2"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><br><input type="submit" value="Submit"/></td>
+    </tr>
+  </table>
+</form>

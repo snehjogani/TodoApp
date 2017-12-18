@@ -1,0 +1,40 @@
+<h3>Todo details</h3>
+<form action="/delete/{{todo._id}}" method="post">
+  <table>
+    <tr>
+      <td><label>Name: &nbsp;&nbsp;</label></td>
+      <td><label>{{todo.name}}</label></td>
+    </tr>
+    <tr>
+      <td><label>Description: &nbsp;&nbsp;</label></td>
+      <td><label>{{todo.desc}}</label></td>
+    </tr>
+    <tr>
+      <td><label>Status: &nbsp;&nbsp;</label></td>
+      <td><label>{{todo.status}}</label></td>
+    </tr>
+    <tr>
+      <td><br><input type="submit" value="Delete Todo" /> &nbsp;&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<br>
+<label>Comments:</label><br><br>
+<form action="/view/{{todo._id}}" method="post">
+  <tr>
+    <td><input type="comment" name="comment" placeholder="Any comment">&nbsp;&nbsp;&nbsp;</td>
+    <td><input type="submit" value="Add"></td>
+  </tr>
+</form>
+<br>
+<table>
+  {{#each comment}}
+    <tr>
+      <td>{{timeAgo this.time}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>{{this.comment}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>
+        <a href="/delete/{{this.todoId}}/{{this._id}}">x</a>
+      </td>
+    </tr>
+  {{/each}}
+</table>

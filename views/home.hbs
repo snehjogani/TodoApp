@@ -1,0 +1,18 @@
+<h3>{{user}}'s TodoList</h3>
+<a href="/create">Create</a>
+<table>
+  <ul>
+    {{#each todo}}
+    <tr>
+        <td>
+          {{#statusCompleted this.status}}
+            <li><a href="/view/{{this._id}}" style="text-decoration: line-through">{{this.name}}</a>&nbsp;&nbsp;</li>
+          {{else}}
+            <li><a href="/view/{{this._id}}" style="text-decoration: none">{{this.name}}</a>&nbsp;&nbsp;</li>
+          {{/statusCompleted}}
+        </td>
+        <td><a href="/edit/{{this._id}}">Edit</a></td>
+    </tr>
+    {{/each}}
+  </ul>
+</table>

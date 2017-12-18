@@ -1,0 +1,27 @@
+<h2>Create Todo</h2>
+<form action="/" method="post">
+    <table>
+        <tr>
+            <td><label>Task to-do:</label></td>
+            <td><input type="text" name="name" placeholder="Enter task here"/></td>
+        </tr>
+        <tr>
+            <td><label>Task Description: &nbsp;&nbsp;&nbsp;</label></td>
+            <td><input type="text" name="desc" placeholder="Enter description here"/></td>
+        </tr>
+        <tr>
+            <td><label>Status: &nbsp;&nbsp;&nbsp;</label></td>
+            <td>
+                <select name="status">
+                    <option value="pending">Pending</option>
+                    <option value="ongoing">Ongoing</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><br><input type="submit" value="Save" /></td>
+        </tr>
+    </table>    
+</form>

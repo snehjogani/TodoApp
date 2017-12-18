@@ -1,0 +1,26 @@
+<h3>Account Login</h3>
+  {{#if success_msg}}
+    {{success_msg}}<br><br>
+  {{/if}}
+  {{#if error_msg}}
+    {{error_msg}}<br><br>
+  {{/if}}
+  {{#if error}}
+    {{error}}<br><br>
+  {{/if}}
+<form method="post" action="/login">
+  <table>
+  <tr>
+    <td><label>Username: &nbsp;&nbsp;</label></td>
+    <td><input type="text" placeholder="Username" name="username"></td>
+  </tr>
+  <tr>
+    <td><label>Password: &nbsp;&nbsp;</label></td>
+    <td><input type="password" placeholder="Password" name="password"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><br><input type="submit" value="Submit"></td>
+  </tr>
+  </table>
+</form>
